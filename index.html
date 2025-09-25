@@ -1,4 +1,19 @@
-<script>
-  window.location.href = "https://youtu.be/BcFqnOm_jGA";
-</script>
-
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Redirecting...</title>
+    <script>
+      // YouTube app ကိုဖွင့်မယ်
+      window.location.href = "https://youtu.be/BcFqnOm_jGA";
+      
+      // fallback (app မရှိရင် browser YouTube သို့သွား)
+      setTimeout(function() {
+        window.location.href = "https://youtu.be/BcFqnOm_jGA";
+      }, 2000);
+    </script>
+  </head>
+  <body>
+    <p>If you are not redirected, <a href="https://youtu.be/BcFqnOm_jGA">click here</a>.</p>
+  </body>
+</html>
