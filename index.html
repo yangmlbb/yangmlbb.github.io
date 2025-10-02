@@ -1,19 +1,182 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Redirecting...</title>
-    <script>
-      // Telegram app ကိုဖွင့်မယ်
-      window.location.href = "https://t.me/onimushatech";
-      
-      // fallback (app မရှိရင် browser Telegram သို့သွား)
-      setTimeout(function() {
-        window.location.href = "https://t.me/onimushatech";
-      }, 2000);
-    </script>
-  </head>
-  <body>
-    <p>If you are not redirected, <a href="https://t.me/onimushatech">click here</a>.</p>
-  </body>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landing Page de Vendas</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    /* Estilos personalizados */
+    .parallax {
+      height: 100vh;
+      background-image: url('https://i.ibb.co/VW3h8Ndx/vecteezy-ai-generated-woman-with-headphones-and-sunglasses-in-front-37320956.jpg'); /* Substitua pelo link da sua imagem de fundo */
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+    }
+
+    .produto-img {
+      height: 200px;
+      border-radius: 25px; /* Borda arredondada */
+    }
+
+    .produto-card {
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .produto-card:hover {
+      transform: translateY(-10px);
+    }
+
+    /* Fundo transparente */
+    body {
+      background-color: rgba(255, 255, 255, 0.9); /* 90% de opacidade */
+    }
+
+    /* Estilos para o footer */
+    footer {
+      background-color: #343a40;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    /* Estilos para a barra lateral */
+    .sidebar {
+      background-color: #343a40;
+      color: white;
+      height: 100vh;
+      width: 0; /* Inicialmente oculto */
+      position: fixed;
+      top: 0;
+      left: 0;
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 60px; /* Espaço para o cabeçalho do sidebar */
+    }
+
+    .sidebar ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .sidebar ul li {
+      padding: 10px;
+    }
+
+    .sidebar ul li a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .open-btn {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 9999; /* Garante que o botão esteja acima de outros elementos */
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Botão para abrir o sidebar -->
+<button class="btn btn-dark open-btn" onclick="openNav()">☰ Menu</button>
+
+<!-- Paralaxe -->
+<section class="parallax">
+  <div class="container">
+    <h1>YANG</h1>
+    <p class="lead">Tech  for  everyone   easy , useful , fun !</p>
+  </div>
+</section>
+
+<!-- Barra lateral -->
+<nav class="sidebar" id="mySidebar">
+  <a href="javascript:void(0)" class="close-btn" onclick="closeNav()">×</a>
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Produtos</a></li>
+    <li><a href="#">Sobre</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- Produtos -->
+<section class="container mt-5">
+  <div class="row">
+    <div class="col-md-4 mb-4">
+      <div class="card produto-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSM0c3u8aXRhNJl0iKX3A5OCqspPIYzQ9AtWA&usqp=CAU" class="card-img-top produto-img" alt="Produto 1">
+        <div class="card-body">
+          <h5 class="card-title">YOUTUBE VIEW</h5>
+          <p class="card-text">As soon as the view increases</p>
+          <a href="https://YANG-tech.github.io/YouTubeView/ytview.html" class="btn btn-primary">Open</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-4">
+      <div class="card produto-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-IJ-Uiyr2is7SE-5JHp03bXTCdX7B2CaC5w&usqp=CAU" class="card-img-top produto-img" alt="Produto 2">
+        <div class="card-body">
+          <h5 class="card-title">Produto 2</h5>
+          <p class="card-text">Descrição do Produto 2.</p>
+          <a href="#" class="btn btn-primary">Comprar</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-4">
+      <div class="card produto-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ61CnSSXlldctQaqVyis3w9640dj8C4dSMUA&usqp=CAU" class="card-img-top produto-img" alt="Produto 3">
+        <div class="card-body">
+          <h5 class="card-title">Produto 3</h5>
+          <p class="card-text">Descrição do Produto 3.</p>
+          <a href="#" class="btn btn-primary">Comprar</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2025 YANG. All rights reserved.</p>
+</footer>
+
+<!-- JavaScript para abrir e fechar o sidebar -->
+<script>
+  function openNav() {
+    document.getElementById("mySidebar").style.width = "250px";
+  }
+
+  function closeNav() {
+    document.getElementById("mySidebar").style.width = "0";
+  }
+</script>
+
+<!-- JavaScript para efeito de paralaxe -->
+<script>
+  window.addEventListener('scroll', function() {
+    const parallax = document.querySelector('.parallax');
+    let scrollPosition = window.pageYOffset;
+    parallax.style.backgroundPositionY = scrollPosition * 0.7 + 'px';
+  });
+</script>
+
+</body>
 </html>
